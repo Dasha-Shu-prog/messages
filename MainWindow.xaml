@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Messagebox1"
         mc:Ignorable="d"
-        Title="Работа со стендом" Height="450" Width="800" Loaded="WindowLoaded">
+        Title="Работа со стендом" Height="450" Width="800" Loaded="WindowLoaded"
+        Background="#FF302E2E" ResizeMode="NoResize" FontFamily="Arial Unicode MS">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -13,6 +14,7 @@
             <Setter Property="FontFamily" Value="Arial Unicode MS"/>
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="#FF7590BF"/>
         </Style>
     </Window.Resources>
     <Grid>

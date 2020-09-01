@@ -21,23 +21,13 @@ namespace Messagebox1
         {
             InitializeComponent();
         }
-        //public enum MessageImage
-        //{
-        //    information = MessageBoxImage.Information,
-        //    warning = MessageBoxImage.Warning,
-        //    error = MessageBoxImage.Error,
-        //    question = MessageBoxImage.Question,
-        //    none = MessageBoxImage.None
-        //}
         private void ButtonYesClick(object sender, RoutedEventArgs e)
         {
-            Close();
-            //DispatcherTimer timer = new DispatcherTimer();
-
+            Background = new SolidColorBrush(Colors.LightGreen);
         }
         private void ButtonNoClick(object sender, RoutedEventArgs e)
         {
-            Close();
+           Background = new SolidColorBrush(Colors.LightSalmon); 
         }
     }
 }

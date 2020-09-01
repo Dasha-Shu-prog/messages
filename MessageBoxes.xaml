@@ -5,21 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Messagebox1"
         mc:Ignorable="d"
-        Height="450" Width="450">
+        Height="450" Width="450" ResizeMode="NoResize"
+        Background="#FF302E2E" FontFamily="Arial Unicode MS"
+        >
     <Window.Resources>
-        <!--<Style TargetType="Label">
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment"  Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontFamily" Value="Arial Unicode MS"/>
-            <Setter Property="FontSize" Value="24"/>
-        </Style>-->
         <Style TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="Arial Unicode MS"/>
             <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="#FF7590BF"/>
         </Style>
         <Style TargetType="Button">
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -27,6 +22,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="Arial Unicode MS"/>
+            <Setter Property="Background" Value="#FF7590BF"/>
             <Setter Property="Height" Value="40"/>
             <Setter Property="Width" Value="80"/>
             <Setter Property="FontSize" Value="24"/>
@@ -42,7 +38,6 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <!--<Label x:Name="messageLabel" Grid.Row="0" Grid.ColumnSpan="2"/>-->
         <TextBlock x:Name="messageLabel" Grid.Row="0" Grid.ColumnSpan="2"
                    Height="auto" Width="auto"/>
         <Button x:Name="buttonYes" Grid.Row="1" Grid.Column="0"
