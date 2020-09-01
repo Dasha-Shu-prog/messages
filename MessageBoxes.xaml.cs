@@ -23,11 +23,13 @@ namespace Messagebox1
         }
         private void ButtonYesClick(object sender, RoutedEventArgs e)
         {
-            Background = new SolidColorBrush(Colors.LightGreen);
+            this.Owner.Background = new SolidColorBrush(Colors.LightSalmon);
+            Close();
         }
         private void ButtonNoClick(object sender, RoutedEventArgs e)
         {
-           Background = new SolidColorBrush(Colors.LightSalmon); 
+            this.Owner.Background = new SolidColorBrush(Colors.LightGreen);
+            Close();
         }
     }
 }
