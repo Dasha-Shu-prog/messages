@@ -25,7 +25,8 @@ namespace Messagebox1
         private const int MAX_TIME = 5;
         static private int time = MAX_TIME;
         static DispatcherTimer timer = new DispatcherTimer();
-        static MessageBoxes messageConnect = new MessageBoxes();
+        static MessageBoxes messageWindow;
+
         EventHandler handler = new EventHandler(Timer_Tick);
         public MainWindow()
         {
@@ -37,10 +38,12 @@ namespace Messagebox1
         }
         private void ConnectClick(object sender, RoutedEventArgs e)
         {
-            messageConnect = new MessageBoxes();
-            messageConnect.Owner = this;
-            messageConnect.Show();
-            messageConnect.Title = "Подключение к стенду";
+            if (messageWindow != null)
+                messageWindow.Close();
+            messageWindow = new MessageBoxes();
+            messageWindow.Owner = this;
+            messageWindow.Show();
+            messageWindow.Title = "Подключение к стенду";
             if (timer.IsEnabled)
             {
                 timer.Stop();
@@ -48,7 +51,7 @@ namespace Messagebox1
             }
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += new EventHandler(Timer_Tick);
-            time = MAX_TIME + 1;
+            time = MAX_TIME;
             Timer_Tick(null, null);
             timer.Start();
         }
@@ -56,22 +59,24 @@ namespace Messagebox1
         {
             if (time > 0)
             {
+                messageWindow.messageLabel.Text = "Идет подключение...\nОсталось " + time + " секунд.\nОтменить?";
                 time--;
-                messageConnect.messageLabel.Text = "Идет подключение...\nОсталось " + time + " секунд.\nОтменить?";
             }
             else
             {
                 timer.Stop();
-                messageConnect.Close();
+                messageWindow.Close();
             }
         }
         private void DisconnectClick(object sender, RoutedEventArgs e)
         {
-            MessageBoxes messageDisconnect = new MessageBoxes();
-            messageDisconnect.Owner = this;
-            messageDisconnect.Show();
-            messageDisconnect.Title = "Отключение от стенда";
-            messageDisconnect.messageLabel.Text = "Идет отключение.\nОтменить?";
+            if (messageWindow != null)
+                messageWindow.Close();
+            messageWindow = new MessageBoxes();
+            messageWindow.Owner = this;
+            messageWindow.Show();
+            messageWindow.Title = "Отключение от стенда";
+            messageWindow.messageLabel.Text = "Идет отключение.\nОтменить?";
             //while (time > 0)
             //{
             //    MessageBox.Show("Идет подключение!\nПодождите!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -79,19 +84,32 @@ namespace Messagebox1
         }
         private void StartScanClick(object sender, RoutedEventArgs e)
         {
-            MessageBoxes messageStartScan = new MessageBoxes();
-            messageStartScan.Owner = this;
-            messageStartScan.Show();
-            messageStartScan.Title = "Сканирование";
-            messageStartScan.messageLabel.Text = "Идет сканирование.\nОтменить?";
+            if (messageWindow != null)
+                messageWindow.Close();
+            messageWindow = new MessageBoxes();
+            messageWindow.Owner = this;
+            messageWindow.Show();
+            messageWindow.Title = "Сканирование";
+            messageWindow.messageLabel.Text = "Идет сканирование.\nОтменить?";
         }
         private void StartCentrClick(object sender, RoutedEventArgs e)
         {
-            MessageBoxes messageStartCentr = new MessageBoxes();
-            messageStartCentr.Owner = this;
-            messageStartCentr.Show();
-            messageStartCentr.Title = "Центрирование";
-            messageStartCentr.messageLabel.Text = "Идет центрирование.\nОтменить?";
+            if (messageWindow != null)
+                messageWindow.Close();
+            messageWindow = new MessageBoxes();
+            messageWindow.Owner = this;
+            messageWindow.Show();
+            messageWindow.Title = "Центрирование";
+            messageWindow.messageLabel.Text = "Идет центрирование.\nОтменить?";
+        }
+        private void BtnCloseClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnStateClick(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
     }
 }

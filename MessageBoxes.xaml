@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Height="450" Width="450" ResizeMode="NoResize"
         Background="#FF302E2E" FontFamily="Arial Unicode MS"
-        WindowStyle="None">
+        WindowStyle="None" WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Center"/>
