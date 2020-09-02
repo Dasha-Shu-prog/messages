@@ -102,14 +102,21 @@ namespace Messagebox1
             messageWindow.Title = "Центрирование";
             messageWindow.messageLabel.Text = "Идет центрирование.\nОтменить?";
         }
+        private void BtnCollapseClick(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+        private void BtnMaxClick(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Maximized;
+        }
         private void BtnCloseClick(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
-        private void BtnStateClick(object sender, RoutedEventArgs e)
+        private void WindowMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            WindowState = WindowState.Minimized;
+            this.DragMove();
         }
     }
 }
