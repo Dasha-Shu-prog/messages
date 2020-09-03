@@ -40,6 +40,7 @@ namespace Messagebox1
         {
             if (messageWindow != null)
                 messageWindow.Close();
+
             messageWindow = new MessageBoxes();
             messageWindow.Owner = this;
             messageWindow.Show();
@@ -72,6 +73,7 @@ namespace Messagebox1
         {
             if (messageWindow != null)
                 messageWindow.Close();
+
             messageWindow = new MessageBoxes();
             messageWindow.Owner = this;
             messageWindow.Show();
@@ -86,6 +88,7 @@ namespace Messagebox1
         {
             if (messageWindow != null)
                 messageWindow.Close();
+
             messageWindow = new MessageBoxes();
             messageWindow.Owner = this;
             messageWindow.Show();
@@ -96,6 +99,7 @@ namespace Messagebox1
         {
             if (messageWindow != null)
                 messageWindow.Close();
+
             messageWindow = new MessageBoxes();
             messageWindow.Owner = this;
             messageWindow.Show();
