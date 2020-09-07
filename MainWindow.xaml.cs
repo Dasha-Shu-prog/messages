@@ -32,10 +32,6 @@ namespace Messagebox1
         {
             InitializeComponent();
         }
-        private void WindowLoaded(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void ConnectClick(object sender, RoutedEventArgs e)
         {
             if (messageWindow != null)
@@ -79,10 +75,6 @@ namespace Messagebox1
             messageWindow.Show();
             messageWindow.Title = "Отключение от стенда";
             messageWindow.messageLabel.Text = "Идет отключение.\nОтменить?";
-            //while (time > 0)
-            //{
-            //    MessageBox.Show("Идет подключение!\nПодождите!", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Warning);
-            //}
         }
         private void StartScanClick(object sender, RoutedEventArgs e)
         {
@@ -112,7 +104,14 @@ namespace Messagebox1
         }
         private void BtnMaxClick(object sender, RoutedEventArgs e)
         {
-            WindowState = WindowState.Maximized;
+            if (WindowState == WindowState.Normal)
+            {
+                WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                WindowState = WindowState.Normal;
+            }
         }
         private void BtnCloseClick(object sender, RoutedEventArgs e)
         {

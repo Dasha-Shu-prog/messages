@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Messagebox1"
         mc:Ignorable="d"
         WindowStyle="None" WindowStartupLocation="CenterScreen"
-        Title="Работа со стендом" Height="450" Width="800" Loaded="WindowLoaded"
+        Title="Работа со стендом" Height="450" Width="800"
         Background="#FF302E2E" ResizeMode="NoResize"
         MouseLeftButtonDown="WindowMouseLeftButtonDown">
 
